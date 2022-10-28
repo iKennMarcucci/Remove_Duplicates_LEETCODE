@@ -1,3 +1,3 @@
-# Remove_Duplicates_LEETCODE
+# Ejercicio LeetCode: Remove Duplicates
 
 Kenn Marcucci - 1151891
