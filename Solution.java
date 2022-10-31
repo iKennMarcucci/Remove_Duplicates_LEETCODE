@@ -9,20 +9,26 @@ public class Solution {
         // Se ofrece dos opciones al usuario para ejecutar el programa
         int eleccion = sc.nextInt();
         System.out.println();
+        int casos = 1;
         if (eleccion == 1) {
-            // Si digita 1, se ejecuta el generador aleatorio de casos de prueba para el
-            // problema y los guarda dentro del array nums
-            int[] nums = new int[100];
-            for (int i = 0; i < nums.length; i++)
-                nums[i] = (int) (Math.random() * 100) + 1;
-            // Como es generado aleatoriamente, se debe ordenar de menor a mayor, se utilizó
-            // ordenamiento por seleccion para ello
-            ordenarPorSeleccion(nums);
-            // ordenarParcialmente(nums);
+            while (casos <= 100) {
+                System.out.println("\n==================================== Caso # " + casos
+                        + " ====================================\n");
+                // Si digita 1, se ejecuta el generador aleatorio de casos de prueba para el
+                // problema y los guarda dentro del array nums
+                int[] nums = new int[50];
+                for (int i = 0; i < nums.length; i++)
+                    nums[i] = (int) (Math.random() * 50) + 1;
+                // Como es generado aleatoriamente, se debe ordenar de menor a mayor, se utilizó
+                // ordenamiento por seleccion para ello
+                ordenarPorSeleccion(nums);
+                // ordenarParcialmente(nums);
 
-            // Al ordenarlos, se pasa a procesar el array para su posterior análisis y
-            // obtención de información
-            procesarResultado(nums);
+                // Al ordenarlos, se pasa a procesar el array para su posterior análisis y
+                // obtención de información
+                procesarResultado(nums);
+                casos++;
+            }
         } else {
             // Si no elije la opción 1, el usuario debe llenar el array manualmente.
             System.out.println("Digite la longitud del array a procesar.");
@@ -118,18 +124,18 @@ public class Solution {
 
     /*
      * INFORMACIÓN SOBRE CASOS BORDES
-     * • Si el array se desea completamente desordenado, se comenta la línea 20 del
+     * • Si el array se desea completamente desordenado, se comenta la línea 24 del
      * programa.
      *
      * • Si el array se desea con elementos negativos, se deben digitar manualmente
-     * o en la línea 17 asignarle negativo al 100 y cambiar el 1 por el digito
+     * o en la línea 21 asignarle negativo al 50 y cambiar el 1 por el digito
      * máximo que se desea).
      *
-     * • Si el array se desea ordenado de mayor a menor, en la línea 63 se cambia el
+     * • Si el array se desea ordenado de mayor a menor, en la línea 69 se cambia el
      * > (mayor que) del condicional por un < (menor que).
      *
      * • Si el array se desea parcialmente ordenado, se descomenta el algoritmo de
-     * la línea 135 y la línea de código 21
+     * la línea 141 y la línea de código 25
      */
 
     // private static void ordenarParcialmente(int[] nums) {
